@@ -6,7 +6,7 @@
 
 - [The Right Way](the_right_way/index.md)
   - [Secure Defaults](the_right_way/secure_defaults.md)
-  - [Threat Model]()
+  - [Threat Model](the_right_way/threat_model.md)
   - [Authentication]()
   - [Authorization]()
   - [Data Storage]()
@@ -19,6 +19,7 @@
   - [Input Validation]()
   - [Correctness]()
   - [Maintenance]()
+  - [Reference]()
 
 # Specific Implementations
 
