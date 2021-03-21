@@ -4,7 +4,7 @@ This guide is intended to serve as an opinionated, complete, end-to-end guide to
 
 ## Why?
 
-There are a million or more guides on the internet for creating a web application. As far as I've seen, they're all focused around a specific technology choice rather than the principles of good design. They also tend to focus on getting started as quickly as possible while leaving out important details along the way, encouraging readers to skip the bits in later chapters which include things like "authentication", "testing", and "documentation". I believe the prevalence of such guides and tutorials has, in no small way, contributed to some of the problems that exist on websites today, such as:
+There are a million or more guides on the internet for creating a web application. As far as I've seen, they're all focused around a specific technology choice rather than the principles of good design. They also tend to focus on getting started as quickly as possible while leaving out important details along the way, encouraging readers to skip the bits in later chapters which include things like authentication, testing, and documentation. I believe the prevalence of such guides and tutorials has, in no small way, contributed to the problems that exist on websites today such as:
 
 1. Undocumented, unversioned APIs leading to slow, stifled, error-ridden development.
 2. Fuzzy boundaries between server and client, making cross site scripting and sluggish I/O harder to prevent.
@@ -16,7 +16,7 @@ There are a million or more guides on the internet for creating a web applicatio
 These statements are what drives the entire rest of the guide. If something doesn't adhere to all of these statements,
 it doesn't belong here.
 
-1. The right way should also be the easy way.
+1. The easy way should also be the right way.
 2. Explicit is better than implicit.
 3. Automatic is better than manual.
 

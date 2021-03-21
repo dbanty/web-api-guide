@@ -7,5 +7,7 @@ Please open issues or pull requests for corrections that need to be made, and st
 ## Roadmap
 
 - [ ] Abstract guide to web APIs avoiding specific technologies
+- [ ] Reviews of existing guides
 - [ ] An opinionated guide to FastAPI solving for as much as possible while highlighting issues.
 - [ ] An opinionated guide to Rust and Rocket to be updated as the solution is more complete
+- [ ] An opinionated guide of Rust + GraphQL

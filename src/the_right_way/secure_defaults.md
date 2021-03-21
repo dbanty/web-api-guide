@@ -1,6 +1,6 @@
 # Secure Defaults
 
-News story after news story has made it abundantly clear that offering security features is not enough, they _must_ be enabled by default. Unfortunately security has taken a back seat to most other aspects of web development pretty consistently throughout the history of the internet. Typically, developers will only go out of their way to improve the security of their application when forced to by some external entity. This is why it is incumbent upon the developers of any internet-connected software to ensure that the _default_ option for their users is __the most secure one__. Even more than that, when simply making the default secure is not enough, efforts must be taken to lower the barrier to security for developers and encourage them to take necessary steps themselves.
+News story after news story has made it abundantly clear that offering security features is not enough, they _must_ be enabled by default. Unfortunately security has taken a back seat to most other aspects of web development pretty consistently throughout the history of the internet. Typically, developers will only go out of their way to improve the security of their application when forced to by some external entity. This is why it is crucial that the developers of any internet-connected software ensure the _default_ option for their users is __the most secure one__. When making the default secure is not plausible, efforts must be taken to lower the barrier to security for developers and encourage them to take necessary steps themselves.
 
 It's impossible to cover all potential security features that need to have good defaults, but let's take a quick look at the [STRIDE](https://en.wikipedia.org/wiki/STRIDE_%28security%29) mnemonic to get an idea of some examples. Each letter in "STRIDE" stands for a security threat to an application.
 
@@ -20,15 +20,15 @@ Repudiation is the threat of lack of information. If a data breach or attack hap
 
 ## I - Information Disclosure
 
-Information disclosure is one of the broader threats to web applications, as it covers any situation in which information is leaked which could be harmful. This could be logging sensitive information to an insecure location (see [the logging section] for more detail). It could also be providing too much information in an error response (see [error handling]). Some resource might also not be authorizing users properly and allowing them access to data they shouldn't be able to see (see [authorization]).
+Information disclosure is one of the broader threats to web applications, as it covers any situation in which information is leaked which could be harmful. This could be logging sensitive information to an insecure location (see [the logging section] for more detail). It could also be providing too much information in an error response (see [error handling]). [Authorization] may be inadequate allowing users access to data they shouldn't be able to see.
 
 A solution must make every effort to implement patterns and technologies that reduce the chance of information disclosure while also pointing out the potential risks to users. I suggest that creators of solutions go a step further and provide [a threat model] both to show the attack surface and threats to the solution in general and so that performing such a model on an application is __easier for the developer__. Furthermore, it's extremely important that a clear method of communication with consumers is established and that they are encouraged to follow it for security updates (see [maintenance]).
 
-# D - Denial of Service
+## D - Denial of Service
 
 Denial of service is the security perspective of stability. Common features that solutions require to mitigate this threat are scaling gracefully under load (see [infrastructure]) and preventing bugs from crippling the system (see [error handling] and [correctness]).
 
-# E - Elevation of Privilege
+## E - Elevation of Privilege
 
 Elevation of privilege is specifically attempting to bypass any [authorization] system which is in place. Solutions must provide an authorization system which is explicit to reduce the chance of under-securing and on by default to reduce the chance of failing to secure altogether. Additionally, solutions should use tools that prevent bypassing the authorization system altogether (see [correctness] and [maintenance]).
 
