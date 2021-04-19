@@ -1,0 +1,18 @@
+[tasks.format]
+command = "npx"
+args = ["prettier", "--write", "**/*.md"]
+
+[tasks.watch]
+install_crate = "mdbook"
+command = "mdbook"
+args = ["watch", "--open"]
+
+[tasks.build]
+install_crate = "mdbook"
+command = "mdbook"
+args = ["build"]
+
+[tasks.clean]
+install_crate = "mdbook"
+command = "mdbook"
+args = ["clean"]
