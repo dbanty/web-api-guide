@@ -15,6 +15,12 @@ jobs:
           profile: minimal
           toolchain: stable
 
+      - name: Cache cargo bin
+        uses: actions/cache@v1
+        with:
+          path: ~/.cargo/bin
+          key: cargo-bin
+
       - name: Install cargo-make
         uses: actions-rs/cargo@v1
         with:
