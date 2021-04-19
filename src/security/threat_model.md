@@ -22,6 +22,7 @@ The goal of a data flow diagram is to visualize all of the interactions that a w
 ```
 
 There are four distinct types of elements in a data flow diagram:
+
 1. A **process** is something running which you control. Generally this will be the main subject of the diagram. In the example, "My API" is a process.
 2. An **external entity** is something that you don't control. In this case, "API Consumer" and "Browser" are external entitiesy.
 3. A **data store** is a place that data is stored. The "Database" in the example.
@@ -50,9 +51,8 @@ Again, similar to the DFD, whatever format you present this threat enumeration i
 
 A threat model is only as useful as it is accurate and relevant. Any guide to creating a web API which includes a base threat model must also tell developers how to use it. How can they take the base model and extend it with more detail? How can they adjust risk levels to their security requirements? What sorts of changes should trigger an update to this model?
 
-
 [threat_modeling]: https://threatmodelingbook.com
-[reference material]: ./reference.md
-[authentication]: ./authentication.md
-[authorization]: ./authorization.md
-[validation]: ./validation.md
+[reference material]: ../drafts/reference.md
+[authentication]: authentication.md
+[authorization]: authorization.md
+[validation]: ../drafts/validation.md
