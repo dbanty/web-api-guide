@@ -3,16 +3,23 @@ command = "npx"
 args = ["prettier", "--write", "**/*.md"]
 
 [tasks.watch]
-install_crate = "mdbook"
 command = "mdbook"
 args = ["watch", "--open"]
+dependencies = ["install-mdbook"]
 
 [tasks.build]
-install_crate = "mdbook"
 command = "mdbook"
 args = ["build"]
+dependencies = ["install-mdbook"]
 
 [tasks.clean]
-install_crate = "mdbook"
 command = "mdbook"
 args = ["clean"]
+dependencies = ["install-mdbook"]
+
+[tasks.install-mdbook]
+install_crate = { crate_name = "mdbook", binary = "mdbook", test_arg = "--help" }
+run_task = "install-mdbook-mermaid"
+
+[tasks.install-mdbook-mermaid]
+install_crate = { crate_name = "mdbook-mermaid", binary = "mdbook-mermaid", test_arg = "--help" }
