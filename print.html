@@ -228,13 +228,13 @@ should stay relevant even if the specific technologies recommended go out of fas
 <h2 id="data-flow-diagram"><a class="header" href="#data-flow-diagram">Data Flow Diagram</a></h2>
 <p>A DFD may simultaneously be the most simple and most important piece of a threat model. Visualization of an application is invaluable when attempting to enumerate threats. Conveniently, a DFD will also be a useful educational tool to provide in a guide or <a href="security/../drafts/reference.html">reference material</a> for developers, making it all the more important to include.</p>
 <p>The goal of a data flow diagram is to visualize all of the interactions that a web server might make with external entities. The attack surface of a running application is almost entirely comprised of the locations where data transfer happens, so that's what we're after. The exact format and layout of the DFD will depend on the technology you use to implement it, but an example might look something like this:</p>
-<pre><code class="language-mermaid">    graph TD;
+<pre class="mermaid">    graph TD;
         API((My API))
         DB[(Database)]
         Consumer[API Consumer]
         Consumer &amp; Browser --&gt; API
         API --&gt; DB;
-</code></pre>
+</pre>
 <p>There are four distinct types of elements in a data flow diagram:</p>
 <ol>
 <li>A <strong>process</strong> is something running which you control. Generally this will be the main subject of the diagram. In the example, &quot;My API&quot; is a process.</li>
