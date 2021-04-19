@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Abstract Design</li><li class="chapter-item expanded "><a href="../the_right_way/index.html"><strong aria-hidden="true">1.</strong> The Right Way</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../the_right_way/secure_defaults.html"><strong aria-hidden="true">1.1.</strong> Secure Defaults</a></li><li class="chapter-item expanded "><a href="../the_right_way/threat_model.html" class="active"><strong aria-hidden="true">1.2.</strong> Threat Model</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.</strong> Authentication</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.4.</strong> Authorization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.5.</strong> Data Storage</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.6.</strong> Documentation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.7.</strong> Testing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.8.</strong> Infrastructure</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.9.</strong> Deployment</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.10.</strong> Error Handling</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.11.</strong> Logging</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.12.</strong> Input Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.13.</strong> Correctness</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.14.</strong> Maintenance</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.15.</strong> Reference</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.16.</strong> Configuration</div></li></ol></li><li class="chapter-item expanded "><li class="part-title">Specific Implementations</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> FastAPI - The Best Way Today</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Rocket - Flying Toward the Future</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Abstract Design</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Security</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../security/secure_defaults.html"><strong aria-hidden="true">1.1.</strong> Secure Defaults</a></li><li class="chapter-item expanded "><a href="../security/threat_model.html" class="active"><strong aria-hidden="true">1.2.</strong> Threat Model</a></li><li class="chapter-item expanded "><a href="../security/authentication.html"><strong aria-hidden="true">1.3.</strong> Authentication</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.4.</strong> Authorization</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Data Storage</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Documentation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Testing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Infrastructure</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Deployment</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Error Handling</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Logging</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Input Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Correctness</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Maintenance</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Reference</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -168,7 +168,7 @@
 <p>If you are recommending a technology for use on the internet, you should be providing resources about that technology's security. If such resources don't exist, you shouldn't be recommending the technology. In my opinion, the best resource for describing the security of an application is a threat model.</p>
 <p>Threat modeling is, in short, documenting the security risks and the mitigations to those risks for an application. If you want to learn about the practice in depth, I strongly recommend the <a href="https://threatmodelingbook.com">excellent book by Adam Shostack</a>. For the sake of completeness in this guide, I'll provide a brief overview of the key pieces here.</p>
 <h2 id="data-flow-diagram"><a class="header" href="#data-flow-diagram">Data Flow Diagram</a></h2>
-<p>A DFD may simultaneously be the most simple and most important piece of a threat model. Visualization of an application is invaluable when attempting to enumerate threats. Conveniently, a DFD will also be a useful educational tool to provide in a guide or <a href="./reference.html">reference material</a> for developers, making it all the more important to include.</p>
+<p>A DFD may simultaneously be the most simple and most important piece of a threat model. Visualization of an application is invaluable when attempting to enumerate threats. Conveniently, a DFD will also be a useful educational tool to provide in a guide or <a href="../drafts/reference.html">reference material</a> for developers, making it all the more important to include.</p>
 <p>The goal of a data flow diagram is to visualize all of the interactions that a web server might make with external entities. The attack surface of a running application is almost entirely comprised of the locations where data transfer happens, so that's what we're after. The exact format and layout of the DFD will depend on the technology you use to implement it, but an example might look something like this:</p>
 <pre><code class="language-mermaid">    graph TD;
         API((My API))
@@ -187,7 +187,7 @@
 <p>It's important that the source of the provided data flow diagram be available to developers so that they can build on it to add their own elements. This source should be in a format that's easily accessible, not requiring any expensive tooling to build upon. Threat modeling is going to be a largely manual task, and the easier it is for developers to complete the more likely they are to do it.</p>
 <h2 id="attack-surface-analysis"><a class="header" href="#attack-surface-analysis">Attack Surface Analysis</a></h2>
 <p>The attack surface of an application is, broadly, anywhere that it interacts with other things. In the data flow diagram, each flow represents a portion of the attack surface. In order to allow, for example, a browser to speak to our application, our application must accept communication from the internet on some exposed port. The goal of an attack surface analysis is to look at all of these potential attack vectors in more detail.</p>
-<p>For each attack vector, create documentation which describes where the code and infrastructure are that handle that interaction. This might be a description of the networking technology, firewall rules, <a href="./authentication.html">authentication</a> and <a href="./authorization.html">authorization</a>, or even <a href="./validation.html">validation</a>. The goal is to create a catalogue of specific components that should be analyzed for security threats. This information will also help guide the mindset for threat enumeration.</p>
+<p>For each attack vector, create documentation which describes where the code and infrastructure are that handle that interaction. This might be a description of the networking technology, firewall rules, <a href="authentication.html">authentication</a> and <a href="authorization.html">authorization</a>, or even <a href="../drafts/validation.html">validation</a>. The goal is to create a catalogue of specific components that should be analyzed for security threats. This information will also help guide the mindset for threat enumeration.</p>
 <h2 id="threat-enumeration"><a class="header" href="#threat-enumeration">Threat Enumeration</a></h2>
 <p>There are various ways to perform threat enumeration. My preference is to use STRIDE-per-interaction (no good reference for this yet) as it is extremely thorough, though time consuming. I then put each threat in a table with the risk level and any course of action we're going to take to mitigate that threat. However you go about enumerating and documenting threats, the key things to document are:</p>
 <ol>
@@ -205,11 +205,15 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../the_right_way/secure_defaults.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../security/secure_defaults.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
+                        
+                            <a rel="next" href="../security/authentication.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -219,11 +223,15 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../the_right_way/secure_defaults.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../security/secure_defaults.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
+                
+                    <a rel="next" href="../security/authentication.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
