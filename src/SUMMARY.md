@@ -8,7 +8,7 @@
   - [Secure Defaults](security/secure_defaults.md)
   - [Threat Model](security/threat_model.md)
   - [Authentication](security/authentication.md)
-  - [Authorization]()
+  - [Authorization](security/authorization.md)
 - [Data Storage]()
 - [Documentation]()
 - [Testing]()
